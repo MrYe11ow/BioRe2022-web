@@ -1,0 +1,23 @@
+.justify-content-center{
+	margin: 0px 100px;
+}
+.card{
+	margin: 10px 0px;
+}
+.bg-gray{
+	background-color: #efefef;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+	background-color: #535458;
+}
+.nav-link{
+	color: black;
+}
+
+.bio-side{
+	padding: 70px 0;
+}
+.bio-disabled{
+	color: gray;
+	font-size: 20px;
+}

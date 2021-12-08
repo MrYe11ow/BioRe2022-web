@@ -33,6 +33,17 @@ $(document).ready(function(){
 	             formatter: actionFormatter
 	         }]
 	});
+	
+	function switchShow(type){
+		console.log(type);
+	}
+	
+	
+	$("#bio-table-show").click(showTable);
+	
+	$("#bio-chart-show").click(showChart);
+	
+	showTable();
 })
 	
 function idformatter(value,row,index){
@@ -47,3 +58,19 @@ function actionFormatter(value, row, index) {
 	result += "<a href='javascript:;' class='btn btn-xs red' onclick=\"DeleteByIds('" + id + "')\" title='删除'><i class='bi bi-link-45deg'></i></span></a>"; 
 	return result;
 }
+
+function showTable(){
+	  $("#bio-chart-show").addClass("bio-disabled")
+	  $("#bio-table-show").removeClass("bio-disabled")
+	  $("#relationChart").hide();
+	  $("#relationTable").show();
+	}
+
+function showChart(){
+	  $("#bio-table-show").addClass("bio-disabled")
+	  $("#bio-chart-show").removeClass("bio-disabled")
+	  $("#relationChart").show();
+	  $("#relationTable").hide();
+	  
+	}
+

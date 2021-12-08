@@ -11,17 +11,10 @@
 		<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
 		<script type="text/javascript" src="js/echarts.js"></script>
 		<script type="text/javascript" src="js/biore.js"></script>
-		<style type="text/css">
-		.justify-content-center{
-			margin: 0px 100px;
-		}
-		.card{
-			margin: 10px 0px;
-		}
-		</style>
+		<link rel="stylesheet" type="text/css" href="./css/biore.css">
 	</head>
-	<body>
-		<div class="shadow p-3 mb-5 bg-body rounded">
+	<body class="bg-gray">
+		<div class="shadow p-1 mb-5 bg-body rounded">
 		    <header class="d-flex flex-wrap justify-content-center py-3">
 		      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
 		        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
@@ -29,32 +22,14 @@
 		      </a>
 		
 		      <ul class="nav nav-pills">
-		        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-		        <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-		        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-		        <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+		        <li class="nav-item"><a href="/BioRe2022-web/bootstrap/index.html" class="nav-link " aria-current="page">Home</a></li>
+		        <li class="nav-item"><a href="/BioRe2022-web/bootstrap/browse.html" class="nav-link ">Browse</a></li>
+		        <li class="nav-item"><a href="/BioRe2022-web/bootstrap/detail.html" class="nav-link active">Detail</a></li>
 		        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
 		      </ul>
 		    </header>
 		</div>
-		
-		<div class="container">
-			<div class="row">
 				
-			  <div class="col-2">
-			    <input type="text" id="t1" class="form-control" placeholder="BRCA1" aria-label="First name">
-			  </div>
-			  <div class="col-2">
-			    <input type="text" class="form-control" placeholder="BRCA2" aria-label="Last name">
-			  </div>
-			  <div class="col-1">
-			    <button type="submit" class="btn btn-primary">serch</button>
-			  </div>
-			</div>
-			
-			
-		</div>
-		
 		<div class="container">
 			<div class="row">
 				
@@ -72,54 +47,114 @@
 					
 				</div>
 				
+				<div class="card">
+				<div class="card-body">
+				<form class="row g-2">
+				  <div class="col-md-6">
+				    <label for="inputEmail4" class="form-label">Email</label>
+				    <input type="email" class="form-control" id="inputEmail4">
+				  </div>
+				  <div class="col-md-6">
+				    <label for="inputPassword4" class="form-label">Password</label>
+				    <input type="password" class="form-control" id="inputPassword4">
+				  </div>
+				  <div class="col-12">
+				    <label for="inputAddress" class="form-label">Address</label>
+				    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+				  </div>
+				  <div class="col-12">
+				    <label for="inputAddress2" class="form-label">Address 2</label>
+				    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+				  </div>
+				  <div class="col-12">
+				    <div class="form-check">
+				      <input class="form-check-input" type="checkbox" id="gridCheck">
+				      <label class="form-check-label" for="gridCheck">
+				        Check me out
+				      </label>
+				    </div>
+				  </div>
+				  <div class="col-12">
+				    <button type="submit" class="btn btn-primary">Serch</button>
+				  </div>
+				  
+				  </div>
+				  </div>
+				</form>
+				
 			</div>
 			<div class="col-9">
+				<div class="row">
+					<div class="col-3" align="center">43242 record find</div>
+					<div class="col-9">
+						<div class="d-flex justify-content-end">
+							<nav aria-label="Page navigation example">
+							  <ul class="pagination">
+							    <li class="page-item">
+							      <a class="page-link" href="#" aria-label="Previous">
+							        <span aria-hidden="true">&laquo;</span>
+							      </a>
+							    </li>
+							    <li class="page-item"><a class="page-link" href="#">1</a></li>
+							    <li class="page-item"><a class="page-link" href="#">2</a></li>
+							    <li class="page-item"><a class="page-link" href="#">3</a></li>
+							    <li class="page-item">
+							      <a class="page-link" href="#" aria-label="Next">
+							        <span aria-hidden="true">&raquo;</span>
+							      </a>
+							    </li>
+							  </ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+				
 			
 			<div class="card">
 			<div class="card-body">
-				<h5 class="card-title"><a href="localhost:9900/data" style='color:black;text-decoration: none;'> Lung Cancer Group (SLCG) phase II trial, the combination of BRCA1 and receptor-associated protein<i class='bi bi-link-45deg'></i></a></h5>
+				<h5 class="card-title"><a href="localhost:9900/data" style='color:black;text-decoration: none;'><i class='bi bi-link-45deg'></i> Lung Cancer Group (SLCG) phase II trial, the combination of BRCA1</a></h5>
 			Despite dramatic advances in cancer research setting, breast cancer remains a major health problem and represents currently a top biomedical research priority. Worldwide, breast cancer is the most common cancer affecting women, and its incidence and mortality rates are expected to increase significantly the next years.
 			</div>
 			</div>
 			
 			<div class="card">
 			<div class="card-body">
-			<h5 class="card-title">Spanish Lung Cancer Group (SLCG) phase II trial, the combination of BRCA1 and receptor-associated protein<i class='bi bi-link-45deg'></i></h5>
+			<h5 class="card-title"><i class='bi bi-link-45deg'></i> Spanish Lung Cancer Group (SLCG) phase II trial</h5>
 			Despite dramatic advances in cancer research setting, breast cancer remains a major health problem and represents currently a top biomedical research priority. Worldwide, breast cancer is the most common cancer affecting women, and its incidence and mortality rates are expected to increase significantly the next years.
 			</div>
 			</div>
 			
 			<div class="card">
 			<div class="card-body">
-				<h5 class="card-title">Spanish Lung Cancer Group (SLCG) phase II trial, the combination of BRCA1 and receptor-associated protein<i class='bi bi-link-45deg'></i></h5>
+				<h5 class="card-title"><i class='bi bi-link-45deg'></i> Spanish Lung Cancer Group (SLCG) phase II trial</h5>
 			Despite dramatic advances in cancer research setting, breast cancer remains a major health problem and represents currently a top biomedical research priority. Worldwide, breast cancer is the most common cancer affecting women, and its incidence and mortality rates are expected to increase significantly the next years.
 			</div>
 			</div>
 			
 			<div class="card">
 			<div class="card-body">
-				<h5 class="card-title">Spanish Lung Cancer Group (SLCG) phase II trial, the combination of BRCA1 and receptor-associated protein<i class='bi bi-link-45deg'></i></h5>
+				<h5 class="card-title"><i class='bi bi-link-45deg'></i> Spanish Lung phase II trial</h5>
 			Despite dramatic advances in cancer research setting, breast cancer remains a major health problem and represents currently a top biomedical research priority. Worldwide, <span class="bg-success text-white">breast cancer</span> is the most common cancer affecting women, and its incidence and mortality rates are expected to increase significantly the next years.
 			</div>
 			</div>
 			
 			<div class="card">
 			<div class="card-body">
-				<h5 class="card-title">Spanish Lung Cancer Group (SLCG) phase II trial, the combination of BRCA1 and receptor-associated protein<i class='bi bi-link-45deg'></i></h5>
+				<h5 class="card-title"><i class='bi bi-link-45deg'></i> Spanish Lung Cancer Group (SLCG) phase II trial, the combination of BRCA1 and</h5>
 			Despite dramatic advances in <span class="bg-warning text-dark">cancer</span> research setting, breast cancer remains a major health problem and represents currently a top biomedical research priority. Worldwide, breast cancer is the most common cancer affecting women, and its incidence and mortality rates are expected to increase significantly the next years.
 			</div>
 			</div>
 			
 			<div class="card">
 			<div class="card-body">
-				<h5 class="card-title">Spanish Lung Cancer Group (SLCG) phase II trial, the combination of BRCA1 and receptor-associated protein<i class='bi bi-link-45deg'></i></h5>
+				<h5 class="card-title"><i class='bi bi-link-45deg'></i> Spanish Lung Cancer Group (SLCG) phase II trial, the combination of BRCA1 and receptor-associated protein</h5>
 			Despite dramatic advances in cancer research setting, breast cancer remains a major health problem and represents currently a top biomedical research priority. Worldwide, breast cancer is the most common cancer affecting women, and its incidence and mortality rates are expected to increase significantly the next years.
 			</div>
 			</div>
 			
 			<div class="card">
 			<div class="card-body">
-				<h5 class="card-title">Spanish Lung Cancer Group (SLCG) phase II trial, the combination of BRCA1 and receptor-associated protein<i class='bi bi-link-45deg'></i></h5>
+				<h5 class="card-title text-truncate"><i class='bi bi-link-45deg'></i> Spanish Lung Cancer Group (SLCG) phase II trial, the combination of BRCA1 and receptor-associated protein</h5>
 			Despite dramatic advances in cancer research setting, breast cancer remains a major health problem and represents currently a top biomedical research priority. Worldwide, breast cancer is the most common cancer affecting women, and its incidence and mortality rates are expected to increase significantly the next years.
 			</div>
 			</div>
