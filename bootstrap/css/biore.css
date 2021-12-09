@@ -14,10 +14,16 @@
 	color: black;
 }
 
-.bio-side{
-	padding: 70px 0;
+.bio-browse-side{
+	padding: 100px 0;
+}
+.bio-detail-side{
+	padding: 55px 0;
 }
 .bio-disabled{
 	color: gray;
 	font-size: 20px;
+}
+p{
+	text-indent: 2em;
 }

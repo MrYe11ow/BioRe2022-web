@@ -1,13 +1,21 @@
 $(document).ready(function(){
 	$('#table').bootstrapTable({
-		search:true,
+		search:false,
 		pagination:true,
-		pageSize:3,
-		//pageList:[5,10,15,20],
+		pageSize:10,
 		showColumns:true,
-		showToggle:true,
+		showToggle:false,
 		showRefresh:true,
-	    url: 'http:localhost:9900/data',        // 表格数据来源
+	    url: 'http:localhost:9900/data',// 表格数据来源
+		queryParams: function(params){
+			var temp = {
+				pageSize:params.pageSize,
+				pageNumber:params.pageNumber,
+				sortOrder:params.sortOrder,
+				bioname:$("#bio-search1").val()
+			};
+			return temp;
+		},
 	    columns: [{
 	        field: 'id',
 	        title: 'Header',
@@ -26,24 +34,21 @@ $(document).ready(function(){
 	        title: 'Header' 
 	    }, {
 	             field:'ID',
-	             title: '操作',
+	             title: 'Operate',
 	             width: 150,
 	             align: 'center',
 	             valign: 'middle',
 	             formatter: actionFormatter
-	         }]
+	    }]
 	});
-	
-	function switchShow(type){
-		console.log(type);
-	}
-	
-	
+		
 	$("#bio-table-show").click(showTable);
 	
 	$("#bio-chart-show").click(showChart);
 	
 	showTable();
+	
+	$("#intro").html("11111111111");
 })
 	
 function idformatter(value,row,index){
@@ -73,4 +78,20 @@ function showChart(){
 	  $("#relationTable").hide();
 	  
 	}
+
+function bioSearch1(){
+	var name = $("#bio-search1").val();
+	$.ajax({
+		type:'GET',
+		url:'http://localhost:9900/test',
+		data:{name:name},
+		success: function(data){
+			console.log(data);
+		}
+	})
+}
+
+function bioTableRefresh(){
+	$("#table").bootstrapTable('refresh')
+}
 
