@@ -2,11 +2,11 @@ $(document).ready(function(){
 	$('#table').bootstrapTable({
 		search:false,
 		pagination:true,
-		pageSize:10,
+		pageSize:15,
 		showColumns:true,
 		showToggle:false,
 		showRefresh:true,
-	    url: 'http:localhost:9900/data',// 表格数据来源
+	    url: 'http://localhost:8080/data/topPair',// 表格数据来源
 		queryParams: function(params){
 			var temp = {
 				pageSize:params.pageSize,
@@ -17,21 +17,22 @@ $(document).ready(function(){
 			return temp;
 		},
 	    columns: [{
-	        field: 'id',
-	        title: 'Header',
+	        field: 'e1',
+	        title: 'e1',
 			formatter: idformatter
 	    }, {
-	        field: 's1',
-	        title: 'Header'
+	        field: 'e1type',
+	        title: 'e1type'
 	    }, {
-	        field: 's2',
-	        title: 'Header'
+	        field: 'e2',
+	        title: 'e2',
+			formatter: idformatter
 	    },{
-	        field: 's3',
-	        title: 'Header'
+	        field: 'e2type',
+	        title: 'e2type'
 	    },{
-	        field: 's4',
-	        title: 'Header' 
+	        field: 'score',
+	        title: 'score' 
 	    }, {
 	             field:'ID',
 	             title: 'Operate',
@@ -52,15 +53,15 @@ $(document).ready(function(){
 })
 	
 function idformatter(value,row,index){
-	return "<a href='sdaf'>"+value+"</a>"
+	return "<a href='sdaf' style='color:black;text-decoration: none;'>"+value+"</a>"
 }
 		
 function actionFormatter(value, row, index) {
 	var id = value;
 	var result = "";
-	result += "<a href='javascript:;' class='btn btn-xs green' onclick=\"EditViewById('" + id + "', view='view')\" title='查看'><i class='bi bi-file-earmark-text'></i></span></a>";
-	result += "<a href='javascript:;' class='btn btn-xs blue' onclick=\"EditViewById('" + id + "')\" title='编辑'><i class='bi bi-geo-alt'></i></span></a>";
-	result += "<a href='javascript:;' class='btn btn-xs red' onclick=\"DeleteByIds('" + id + "')\" title='删除'><i class='bi bi-link-45deg'></i></span></a>"; 
+	result += "<a href='javascript:;' class='btn btn-xs green' onclick=\"getSentences('" + row.e1+"','"+row.e2 + "')\" title='查看'><i class='bi bi-file-earmark-text'></i></span></a>";
+	// result += "<a href='javascript:;' class='btn btn-xs blue' onclick=\"EditViewById('" + id + "')\" title='编辑'><i class='bi bi-geo-alt'></i></span></a>";
+	// result += "<a href='javascript:;' class='btn btn-xs red' onclick=\"DeleteByIds('" + id + "')\" title='删除'><i class='bi bi-link-45deg'></i></span></a>"; 
 	return result;
 }
 
@@ -94,4 +95,15 @@ function bioSearch1(){
 function bioTableRefresh(){
 	$("#table").bootstrapTable('refresh')
 }
+
+function topSingle(){
+	console.log(111);
+}
+
+function getSentences(e1, e2){
+	console.log(e1+','+e2);
+	// window.location.href="detail.html?e1="+e1+"&e2="+e2;
+	window.open("detail.html?e1="+e1+"&e2="+e2);
+}
+
 

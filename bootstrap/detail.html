@@ -11,6 +11,7 @@
 		<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
 		<script type="text/javascript" src="js/echarts.js"></script>
 		<script type="text/javascript" src="js/biore.js"></script>
+		<script type="text/javascript" src="js/detail.js"></script>
 		<link rel="stylesheet" type="text/css" href="./css/biore.css">
 	</head>
 	<body class="bg-gray">
@@ -24,8 +25,8 @@
 		      <ul class="nav nav-pills">
 		        <li class="nav-item"><a href="/BioRe2022-web/bootstrap/index.html" class="nav-link " aria-current="page">Home</a></li>
 		        <li class="nav-item"><a href="/BioRe2022-web/bootstrap/browse.html" class="nav-link ">Browse</a></li>
-		        <li class="nav-item"><a href="/BioRe2022-web/bootstrap/detail.html" class="nav-link active">Detail</a></li>
-		        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+		        <li class="nav-item"><a href="/BioRe2022-web/bootstrap/detail.html" class="nav-link">Detail</a></li>
+		        <li class="nav-item"><a href="#" class="nav-link">Help</a></li>
 		      </ul>
 		    </header>
 		</div>
@@ -79,7 +80,7 @@
 				<div class="row">
 					<div class="col-3" style="padding: 15px 15px;">43242 record find</div>
 					<div class="col-9">
-						<div class="d-flex justify-content-end">
+						<!-- <div class="d-flex justify-content-end">
 							<nav aria-label="Page navigation example">
 							  <ul class="pagination">
 							    <li class="page-item">
@@ -97,13 +98,13 @@
 							    </li>
 							  </ul>
 							</nav>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				
 			
 			<div class="card">
-			<div class="card-body">
+			<div id="bio-sentences" class="card-body">
 				<h6 class="card-title"><a href="localhost:9900/data" style='color:black;text-decoration: none;'><i class='bi bi-link-45deg'></i> Lung Cancer Group (SLCG) phase II trial, the combination of BRCA1</a></h6>
 			Despite dramatic advances in cancer research setting, breast cancer remains a major health problem and represents currently a top biomedical research priority. Worldwide, breast cancer is the most common cancer affecting women, and its incidence and mortality rates are expected to increase significantly the next years.
 			</div>

@@ -5,10 +5,15 @@
 	margin: 10px 0px;
 }
 .bg-gray{
-	background-color: #efefef;
+	/* background-color: #efefef; */
+	background-color: rgb(8 119 204 / 11%);
+	/* background: linear-gradient(0,#bdddf8,#efefef);
+	background-size: 100% 100%;
+	background-attachment: fixed; */
 }
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
-	background-color: #535458;
+	/* background-color: #535458; */
+	background-color: #0877cc;
 }
 .nav-link{
 	color: black;
@@ -24,6 +29,15 @@
 	color: gray;
 	font-size: 20px;
 }
-p{
+/* p{
 	text-indent: 2em;
+} */
+
+.btn-primary{
+	background-color: #0877cc;
+	border-color: #0877cc;
+}
+
+#bio-sentences{
+	background-color: rgb(246 249 255);
 }

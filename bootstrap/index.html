@@ -18,14 +18,14 @@
 		    <header class="d-flex flex-wrap justify-content-center py-2">
 		      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
 		        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-		        <span class="fs-4">BIORE</span>
+		        <span class="fs-4"><b>BIORE</b></span>
 		      </a>
 		
 		      <ul class="nav nav-pills">
-		        <li class="nav-item"><a href="/BioRe2022-web/bootstrap/index.html" class="nav-link active" aria-current="page">Home</a></li>
+		        <li class="nav-item"><a href="/BioRe2022-web/bootstrap/index.html" class="nav-link" aria-current="page">Home</a></li>
 		        <li class="nav-item"><a href="/BioRe2022-web/bootstrap/browse.html" class="nav-link">Browse</a></li>
 		        <li class="nav-item"><a href="/BioRe2022-web/bootstrap/detail.html" class="nav-link">Detail</a></li>
-		        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+		        <li class="nav-item"><a href="#" class="nav-link">Help</a></li>
 		      </ul>
 		    </header>
 		</div>
@@ -35,10 +35,15 @@
 				Despite dramatic advances in cancer research setting, breast cancer remains a major health problem and represents currently a top biomedical research priority. Worldwide, breast cancer is the most common cancer affecting
 				Despite dramatic advances in cancer research setting, breast cancer remains a major health problem and represents currently a top biomedical research priority. Worldwide, breast cancer is the most common cancer affecting
 				Despite dramatic advances in cancer research setting, breast cancer remains a major health problem and represents currently a <a href="#">top result</a> biomedical research priority. Worldwide, breast cancer is the most common cancer affecting
-				<ul>
+				<!-- <ul>
 					<li><span class="badge bg-success">gene</span> : 423423</li>
 					<li><span class="badge bg-secondary">protein</span> : 34244425</li>
 					<li><span class="badge bg-warning">rna</span>rna : 32423</li>
+				</ul> -->
+				<ul>
+					<li>gene : 423423</li>
+					<li>protein : 34244425</li>
+					<li>rna : 32423</li>
 				</ul>
 				Despite dramatic advances in cancer research setting, breast cancer remains a major health problem and represents currently a top biomedical research priority. Worldwide, breast cancer is the most common cancer affecting
 				
@@ -46,10 +51,10 @@
 			
 			<div class="row">
 				<div class="col-6">
-					<div id="chart1"  style="width: 460px;height:400px;" class="d-flex justify-content-center"></div>
+					<div id="chart1"  style="width: 300px;height:350px;" class="d-flex justify-content-center"></div>
 				</div>
 				<div class="col-6">
-					<div id="chart2"  style="width: 400px;height:400px;" class="d-flex justify-content-center"></div>
+					<div id="chart2"  style="width: 300px;height:350px;" class="d-flex justify-content-center"></div>
 				</div>
 			</div>
 			
@@ -62,6 +67,7 @@
 	var myChart = echarts.init(chartDom);
 	var option;
 	option = {
+		// color:['#717171'],
 	  xAxis: {
 	    type: 'category',
 	    data: ['gene', 'dna', 'protein']
@@ -84,6 +90,7 @@
 	var option2;
 	
 	option2 = {
+		// color:['#717171'],
 	  xAxis: {
 	    type: 'category',
 	    data: ['gene-gene', 'med-diease', 'protein-protein']
@@ -144,4 +151,28 @@
 		标题位置共现的实体对赋予更高的置信度
 		
 		针对pmid的相似、被引用、参考 链接构建引文网络
+		
+		
+-----
+前端todo：
+tab激活 顶端横杠标示
+
+index: 文章数量，句子数量，各类实体数量，柱状图
+
+browse: TopSingle时，chart禁用，只展示table，
+	chart：出现次数前50的单个实体作为node，共现前30的作为link
+
+detail: 总数显示、show more
+	single和pair的切换
+	模态框内容的填充，包含链接
+	
+About:
+	工具、资源的链接：pubmed、e-utilities、OpenNLP、Abner、HGNC、Stanford NLP、
+	
+后端todo：
+	Sentence重复问题
+	共现 相同实体组队问题
+	计算共现速度问题，sql代替可行性
+	摘要级别共现排行
+	
  -->
