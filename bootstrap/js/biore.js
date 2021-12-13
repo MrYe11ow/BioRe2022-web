@@ -1,18 +1,47 @@
 $(document).ready(function(){
-	$('#table').bootstrapTable({
-		search:false,
-		pagination:true,
-		pageSize:15,
-		showColumns:true,
-		showToggle:false,
-		showRefresh:true,
-	    url: 'http://localhost:8080/data/topPair',// 表格数据来源
+	$('#table1').bootstrapTable({
+		url: 'http://localhost:8080/data/topSingle',// 表格数据来源
 		queryParams: function(params){
 			var temp = {
 				pageSize:params.pageSize,
 				pageNumber:params.pageNumber,
 				sortOrder:params.sortOrder,
 				bioname:$("#bio-search1").val()
+			};
+			return temp;
+		},
+		columns: [{
+		    field: 'name',
+		    title: 'name',
+			formatter: idformatter
+		},{
+		    field: 'score',
+		    title: 'score' 
+		}, {
+		         field:'ID',
+		         title: 'Operate',
+		         width: 150,
+		         align: 'center',
+		         valign: 'middle',
+		         formatter: actionFormatter
+		}]
+	});
+	
+	$('#table2').bootstrapTable({
+		search:false,
+		pagination:true,
+		pageSize:15,
+		//showColumns:true,
+		showToggle:false,
+		//showRefresh:true,
+	    url: 'http://localhost:8080/data/topPair',// 表格数据来源
+		queryParams: function(params){
+			var temp = {
+				pageSize:params.pageSize,
+				pageNumber:params.pageNumber,
+				sortOrder:params.sortOrder,
+				bioname:$("#bio-search1").val(),
+				level:$("#level").val()
 			};
 			return temp;
 		},
@@ -43,13 +72,12 @@ $(document).ready(function(){
 	    }]
 	});
 		
-	$("#bio-table-show").click(showTable);
-	
+	$("#bio-table-show").click(showTable1);
 	$("#bio-chart-show").click(showChart);
+	$("#top-single-button").click(topSingle);
 	
-	showTable();
+	showTable1();
 	
-	$("#intro").html("11111111111");
 })
 	
 function idformatter(value,row,index){
@@ -65,20 +93,39 @@ function actionFormatter(value, row, index) {
 	return result;
 }
 
-function showTable(){
-	  $("#bio-chart-show").addClass("bio-disabled")
-	  $("#bio-table-show").removeClass("bio-disabled")
-	  $("#relationChart").hide();
-	  $("#relationTable").show();
-	}
+function showTable1(){
+	$("#bio-chart-show").addClass("bio-disactive")
+	$("#bio-table-show").removeClass("bio-disactive")
+	$("#relationChart").hide();
+	$("#relationTable").show();
+	
+	$("#table2").hide();
+	$("#table1").show();
+	
+	$('#level').val('1');
+	$("#table1").bootstrapTable('refresh')
+}
+
+function showTable2(level){
+	$("#bio-chart-show").addClass("bio-disactive")
+	$("#bio-table-show").removeClass("bio-disactive")
+	$("#relationChart").hide();
+	$("#relationTable").show();
+	
+	$("#table1").hide();
+	$("#table2").show();
+	
+	$('#level').val(level);
+	$("#table2").bootstrapTable('refresh')
+}
+
 
 function showChart(){
-	  $("#bio-table-show").addClass("bio-disabled")
-	  $("#bio-chart-show").removeClass("bio-disabled")
-	  $("#relationChart").show();
-	  $("#relationTable").hide();
-	  
-	}
+	$("#bio-table-show").addClass("bio-disactive")
+	$("#bio-chart-show").removeClass("bio-disactive")
+	$("#relationChart").show();
+	$("#relationTable").hide();
+}
 
 function bioSearch1(){
 	var name = $("#bio-search1").val();
@@ -98,6 +145,12 @@ function bioTableRefresh(){
 
 function topSingle(){
 	console.log(111);
+	showTable1();
+}
+
+function topPair(level){
+	console.log(222);
+	showTable2(level);
 }
 
 function getSentences(e1, e2){
